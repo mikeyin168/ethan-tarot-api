@@ -1,3 +1,15 @@
+print("🚀 Ethan Tarot API 啟動中...")
+
+# JSON 檔案路徑確認
+print("📂 嘗試讀取塔羅 JSON 檔案...")
+TAROT_PATH = os.environ.get("TAROT_JSON_PATH", "Tarot_Major_Arcana_Full.json")
+try:
+    with open(TAROT_PATH, encoding="utf-8") as f:
+        tarot_cards = json.load(f)
+    print("✅ 成功讀取 tarot_cards，共", len(tarot_cards), "張牌")
+except Exception as e:
+    print("❌ 讀取 JSON 失敗：", e)
+    tarot_cards = []
 
 from flask import Flask, request, jsonify, send_file
 import random
