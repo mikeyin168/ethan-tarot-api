@@ -1,7 +1,14 @@
+from flask import Flask, request, jsonify, send_file
+import os
+import random
+import datetime
+from jinja2 import Template
+from weasyprint import HTML
+import json
 
 print("🚀 Ethan Tarot API 啟動中...")
-# JSON 檔案路徑確認
 print("📂 嘗試讀取塔羅 JSON 檔案...")
+
 TAROT_PATH = os.environ.get("TAROT_JSON_PATH", "Tarot_Major_Arcana_Full.json")
 try:
     with open(TAROT_PATH, encoding="utf-8") as f:
@@ -11,14 +18,6 @@ except Exception as e:
     print("❌ 讀取 JSON 失敗：", e)
     tarot_cards = []
 
-from flask import Flask, request, jsonify, send_file
-import os
-import random
-import datetime
-from jinja2 import Template
-from weasyprint import HTML
-import os
-import json
 
 app = Flask(__name__)
 
