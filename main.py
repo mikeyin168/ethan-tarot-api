@@ -12,6 +12,7 @@ except Exception as e:
     tarot_cards = []
 
 from flask import Flask, request, jsonify, send_file
+import os
 import random
 import datetime
 from jinja2 import Template
