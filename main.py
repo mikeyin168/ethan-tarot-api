@@ -1,3 +1,4 @@
+
 print("🚀 Ethan Tarot API 啟動中...")
 # JSON 檔案路徑確認
 print("📂 嘗試讀取塔羅 JSON 檔案...")
