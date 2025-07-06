@@ -1,5 +1,4 @@
 print("🚀 Ethan Tarot API 啟動中...")
-
 # JSON 檔案路徑確認
 print("📂 嘗試讀取塔羅 JSON 檔案...")
 TAROT_PATH = os.environ.get("TAROT_JSON_PATH", "Tarot_Major_Arcana_Full.json")
