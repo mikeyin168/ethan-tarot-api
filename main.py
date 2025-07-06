@@ -1,3 +1,4 @@
+
 from flask import Flask, request, jsonify, send_file
 import os
 import random
@@ -5,6 +6,8 @@ import datetime
 from jinja2 import Template
 from weasyprint import HTML
 import json
+
+app = Flask(__name__)
 
 print("🚀 Ethan Tarot API 啟動中...")
 print("📂 嘗試讀取塔羅 JSON 檔案...")
@@ -17,17 +20,6 @@ try:
 except Exception as e:
     print("❌ 讀取 JSON 失敗：", e)
     tarot_cards = []
-
-
-app = Flask(__name__)
-
-TAROT_PATH = os.environ.get("TAROT_JSON_PATH", "Tarot_Major_Arcana_Full.json")
-try:
-    with open(TAROT_PATH, encoding="utf-8") as f:
-        tarot_cards = json.load(f)
-except Exception as e:
-    tarot_cards = []
-    print("[ERROR] Failed to load tarot data:", e)
 
 three_card_template = Template("""
 <html><body>
